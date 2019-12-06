@@ -1,0 +1,31 @@
+.brandnav {
+    font-weight: 800;
+}
+
+.navbar-nav{
+  text-align: end !important;
+}
+
+// .linksnav {
+//   padding-left:0px;
+// }
+
+.contacto {
+  margin-left: 15px;
+  position: fixed;
+  z-index: 1;
+  bottom: 50%;
+  width: 100%;
+}
+
+.navbar {
+  opacity: 0.9 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: black;
+    position:static;
+    bottom:0px;
+  }
+}
