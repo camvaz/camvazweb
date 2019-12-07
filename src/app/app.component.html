@@ -1,4 +1,63 @@
-<div class="container-fluid p-0"
+<div class="container-fluid p-0 black"
+     >
+    <app-navbar></app-navbar>
+    <app-video></app-video>
+    <app-footer></app-footer>
+</div>
+    <!-- <ng-template [ngIf]="contact == true">
+        <div class="contacto">
+            <div class="row justify-content-center animated fadeInDown faster" id="contactcard">
+                <div class="col-md-5">
+                    <mdb-card>
+                        <mdb-card-body>
+                            <mdb-card-title>
+                                <h4 class="text-center"><strong>Contacto</strong></h4>
+                                <hr>
+                            </mdb-card-title>
+                            <mdb-card-text class="text-justify">
+                                Inserte sus datos para ponerme en contacto lo mas pronto posible.
+                                Quedo a sus ordenes a traves de mis redes sociales que se encuentran en el pie de pagina.
+                            </mdb-card-text>
+                            <form [formGroup]="validatingForm">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="md-form">
+                                            <input mdbInput mdbValidate type="email" id="form1" class="form-control">
+                                            <label for="form1">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="md-form">
+                                            <input mdbInput mdbValidate type="email" id="form1" class="form-control"
+                                                formControlName="email">
+                                            <label for="form1">Correo Electronico</label>
+                                            <mdb-error
+                                                *ngIf="inputemail.invalid && (inputemail.dirty || inputemail.touched)">
+                                                E-mail invalido</mdb-error>
+                                            <mdb-success
+                                                *ngIf="inputemail.valid && (inputemail.dirty || inputemail.touched)">E-mail
+                                                valido</mdb-success>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row justify-content-end">
+                                    <button mdbbtn mdbwaveseffect type="button" (click)="aceptarcontacto()" id="btnaceptar"
+                                        class="btn btn-primary mr-1">
+                                        <strong class="">Aceptar</strong>
+                                    </button>
+                                    <button mdbbtn mdbwaveseffect type="button" (click)="cancelarcontacto()"
+                                        id="btncancelar" class="btn btn-light">
+                                        <strong class="">Cancelar</strong>
+                                    </button>
+                                </div>
+                            </form>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </div>
+        </div>
+    </ng-template> -->
+<!-- <div class="container-fluid p-0"
         style="background-color: black;">
     <div class="row"
         >
@@ -110,5 +169,5 @@
             <router-outlet class="appdim"></router-outlet>
             <app-footer class="appdim"></app-footer>
         </div>
-    </div>
-</div>
+    </div> -->
+<!-- </div> -->

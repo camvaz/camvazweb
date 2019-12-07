@@ -1,5 +1,28 @@
-<!-- The video -->
-<div class="container-fluid containervideo appdim " style="height:1207px">
+<div class="row">
+    <div class="col-md w-responsive p-0" 
+                >
+        <div class="view w-100">
+            <!-- <img src="../../assets/video/video.mp4" class="img-fluid" alt=""> -->
+            <ng-template [ngIf]="mobile == true">
+                <img src="../../assets/img/splash.jpg" class="img-fluid" alt="">
+            </ng-template>
+            <ng-template [ngIf]="mobile !=true ">
+                <video autoplay muted loop id="myVideo">
+                    <source src="../../assets/video/video.mp4" type="video/mp4">
+                </video>
+            </ng-template>
+            <div class="mask pattern6 flex-center w-responsive">
+                <p class="white-text">.pattern-1</p>       
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- The video
+<div class="container-fluid containervideo appdim " 
+style="
+        z-index: 0;
+        position: absolute !important; ">
     <div class="row">
         <div class="col-md p-0" style="height:1207px">
             <video autoplay muted loop id="myVideo">
@@ -17,14 +40,14 @@
                                 <strong class="p-1">Portafolio</strong> <mdb-icon fas icon="file-code" class="p-1"></mdb-icon>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="col-md content2 mx-2">
                         <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
                         <p class="parrafovid text-center text-white ">Full Stack Developer</p>
                     </div> -->
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
             <!-- <div class="content">
                 <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
                 <p class="parrafovid text-center text-white ">Full Stack Developer</p>
@@ -33,6 +56,6 @@
                 <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
                 <p class="parrafovid text-center text-white ">Full Stack Developer</p>
             </div> -->
-        </div>
-    </div>
-</div>
+        <!-- </div> -->
+    <!-- </div>
+</div> -->

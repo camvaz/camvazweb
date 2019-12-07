@@ -1,7 +1,9 @@
 import { Component, HostListener } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, NgControl } from '@angular/forms'; 
+import { FormGroup, FormControl, Validators, NgControl } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,15 +17,17 @@ export class AppComponent {
   yaxis: number;
   botonUp: boolean;
 
-  constructor(private router: Router){
+  constructor(private router: Router,
+          private toastr:ToastrService){
 
   }
   
   ngOnInit() {
-    this.router.navigate(['index']);
+    // this.router.navigate(['index']);
     this.validatingForm = new FormGroup({
       email: new FormControl(null, [Validators.required,Validators.email])
     })
+    this.toastr.success('te','te')
     // $("#myVideo").play();
   }
   
