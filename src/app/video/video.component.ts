@@ -10,10 +10,13 @@ export class VideoComponent implements OnInit {
   mobile: boolean;
   public map: any = { lat: 51.678418, lng: 7.809007 };
   icons: string[];
+  vid: HTMLVideoElement;
 
   constructor() { }
 
   ngOnInit() {
+    this.vid = <HTMLVideoElement> document.getElementById("myVideo");
+    this.vid.play();
     this.icons =["logos:firebase",
                  "logos:angular-icon",
                  "logos:nodejs",

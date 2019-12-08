@@ -22,7 +22,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './video/video.component';
-import { ContactoComponent } from './contacto/contacto.component';
 import { AboutComponent } from './about/about.component';
 
 
@@ -32,7 +31,6 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     FooterComponent,
     VideoComponent,
-    ContactoComponent,
     AboutComponent
   ],
   imports: [
