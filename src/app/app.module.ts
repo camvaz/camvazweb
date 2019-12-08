@@ -35,6 +35,7 @@ import { AboutComponent } from './about/about.component';
   ],
   imports: [
     AgmCoreModule.forRoot({
+
       apiKey:'AIzaSyBsMJy4sS3dFOhp0R7WkjXmDnbbESROKAU'
     }),
     CommonModule,

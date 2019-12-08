@@ -6,6 +6,7 @@
             <ng-template [ngIf]="mobile == true">
                 <img src="../../assets/img/splash.jpg" class="img-fluid" alt="">
                 <img src="../../assets/img/splash.jpg" class="img-fluid" alt="">
+                <img src="../../assets/img/splash.jpg" class="img-fluid" alt="">
             </ng-template>
             <ng-template [ngIf]="mobile !=true ">
                 <video autoplay muted loop id="myVideo">
@@ -23,12 +24,17 @@
                             <h1 class="uk-text-bold text-white text-center nombre"> Victor Campos </h1>
 
                             <h1 class="uk-text-bold text-white text-center descripcion"> Full Stack Web Developer </h1>
+                            <button type="button"
+                                class=" botonland btn-primary"
+                                mdbWavesEffect> 
+                                <mdb-icon fas icon="file-code" class="pr-1"></mdb-icon>Ver portafolio </button>
                         </div>
                             
-                        <div class="col-md-2 colcards animated slideInUp faster" 
+                        <div class="col-md-2 colcards animated slideInRight faster" 
                              >
                             <div class="row pt-4">
-                                <div class="col-md">
+                                <div class="col-md"
+                             >
                                     <mdb-card
                                     >
                                       <!-- <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
@@ -75,12 +81,14 @@
                             <div class="row py-4">
                                         <div class="col-md">
                                             <mdb-card>
-                                              <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
-                                                  <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-                                              </agm-map> 
+                                                <div class="divmap">
+                                                    <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 250px">
+                                                        <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
+                                                    </agm-map> 
+                                                </div>
                                               <mdb-card-body class="text-white carta">
                                                 <mdb-card-title>
-                                                  <h4 class="text-dark">IT Engineering student.</h4>
+                                                  <h4 class="text-dark">College</h4>
                                                   <small class="text-dark">Benemerita Universidad Autonoma de Puebla</small>
                                                 </mdb-card-title>
                                               </mdb-card-body>

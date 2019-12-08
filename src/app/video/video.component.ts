@@ -8,26 +8,28 @@ import * as $ from 'jquery';
 })
 export class VideoComponent implements OnInit {
   mobile: boolean;
-  public map: any = { lat: 51.678418, lng: 7.809007 };
+  public map: any = { lat:19.0420883, lng: -98.1973028 };
   icons: string[];
-  vid: HTMLVideoElement;
+  // vid: HTMLVideoElement;
 
   constructor() { }
 
   ngOnInit() {
-    this.vid = <HTMLVideoElement> document.getElementById("myVideo");
-    this.vid.play();
-    this.icons =["logos:firebase",
-                 "logos:angular-icon",
-                 "logos:nodejs",
-                 "logos:typescript-icon",
-                 "logos:java",
-                 "logos:mongodb",
-                 "logos:mysql",
-                 "logos:c-plusplus",
-                 "logos:c",
-                 "logos:scala",
-                 "logos:postgresql",
+    // this.vid = <HTMLVideoElement> document.getElementById("myVideo");
+    // this.vid.play();
+
+    this.icons =[
+      "logos:angular-icon",
+      "logos:nodejs",
+      "logos:typescript-icon",
+      "logos:firebase",
+      "logos:mongodb",
+      "logos:mysql",
+      "logos:postgresql",
+      "logos:c-plusplus",
+      "logos:c",
+      "logos:qt",
+      "logos:java",
                  "logos:python",
                  "logos:php",
                  "logos:linux-tux",
