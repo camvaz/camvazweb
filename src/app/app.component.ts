@@ -2,7 +2,6 @@ import { Component, HostListener } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, NgControl } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +16,7 @@ export class AppComponent {
   yaxis: number;
   botonUp: boolean;
 
-  constructor(private router: Router,
-          private toastr:ToastrService){
+  constructor(private router: Router){
 
   }
   
@@ -27,7 +25,6 @@ export class AppComponent {
     this.validatingForm = new FormGroup({
       email: new FormControl(null, [Validators.required,Validators.email])
     })
-    this.toastr.success('te','te')
     // $("#myVideo").play();
   }
   

@@ -1,6 +1,44 @@
-/* Style the video: 100% width and height to cover the entire window */
+/* style the video: 100% width and height to cover the entire window */
 
+@media only screen and (max-width: 768px) {
+  .nombre {
+    font-size: 2rem !important;
+  }
+  .descripcion {
+    font-size: 1rem !important;
+  }
+  .colcards {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    padding-top:22% !important;
+  }
+}
 
+.carta {
+  background-color: #f4f4f4  !important;
+}
+
+.iconos {
+  padding:10px;
+  padding-right: 5px !important;
+}
+
+.colcards{
+  padding-right: 2%;
+}
+
+.colnombre{
+  margin-top:18%;
+  // background: rgba(0, 0, 0, 0.5);
+}
+.nombre {
+  font-weight: 800;
+  font-size: 4rem;
+}
+.descripcion{
+  font-weight: 100;
+  font-size:1.5rem;
+}
 #myVideo {
     
     // min-width: 100%;
@@ -9,88 +47,93 @@
     // min-height: 100%;
   }
   
-  /* Add some content at the bottom of the video/page */
-  .content {
+//   /* Add some content at the bottom of the video/page */
+//   .content {
 
-    position: relative;
-    bottom: 55%;
-    // bottom: 0;
-    // margin-left:50%; 
-    // background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    // width: 40%;
+//     position: relative;
+//     bottom: 55%;
+//     // bottom: 0;
+//     // margin-left:50%; 
+//     // background: rgba(0, 0, 0, 0.5);
+//     color: #f1f1f1;
+//     // width: 40%;
      
-    padding: 20px;
-  }
+//     padding: 20px;
+//   }
 
-  .content2 {
+//   .content2 {
 
-    position: relative;
-    // bottom: 60%;
-    // bottom: 0;
-    // left:60%; 
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    // width: 40%;
+//     position: relative;
+//     // bottom: 60%;
+//     // bottom: 0;
+//     // left:60%; 
+//     background: rgba(0, 0, 0, 0.5);
+//     color: #f1f1f1;
+//     // width: 40%;
      
-    padding: 20px;
-  }
+//     padding: 20px;
+//   }
 
-.titulovid {
-    font-size: 300%;
+// .titulovid {
+//     font-size: 300%;
 
-    font-weight: 800;
-  }
+//     font-weight: 800;
+//   }
 
-.parrafovid {
-  font-size: 150%;
+// .parrafovid {
+//   font-size: 150%;
 
-}
+// }
 
-.botonvid{
-  // align-self: center
-  margin-left: 20%;
-}
+// .botonvid{
+//   // align-self: center
+//   margin-left: 20%;
+// }
 
-  @media only screen and (max-width: 768px){
-      .titulovid {
-        font-size:150%;
-        text-align:center;
-      }
+//   @media only screen and (max-width: 768px){
+//       .titulovid {
+//         font-size:150%;
+//         text-align:center;
+//       }
 
-      .parrafovid{
-        font-size:100%
-      }
-  .containervideo{
-    top: 0px;
-    bottom:0px;
-    position: static;
-    z-index: 0 !important;
-  }
-    //   #myVideo {
-    //       height: 3000px;
-    //   }
-  }
+//       .parrafovid{
+//         font-size:100%
+//       }
+//   .containervideo{
+//     top: 0px;
+//     bottom:0px;
+//     position: static;
+//     z-index: 0 !important;
+//   }
+
+//   .nombre {
+//     font-weight: 800;
+//     font-size: 2rem;
+//   }
+//     //   #myVideo {
+//     //       height: 3000px;
+//     //   }
+//   }
   
-  /* Style the button used to pause/play the video */
-  #myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-  }
+//   /* Style the button used to pause/play the video */
+//   #myBtn {
+//     width: 200px;
+//     font-size: 18px;
+//     padding: 10px;
+//     border: none;
+//     background: #000;
+//     color: #fff;
+//     cursor: pointer;
+//   }
   
-  #myBtn:hover {
-    background: #ddd;
-    color: black;
-  }
+//   #myBtn:hover {
+//     background: #ddd;
+//     color: black;
+//   }
 
-  .containervideo {
-        position: relative;
-        z-index: -1 !important;
-        bottom: 68px;
-        // margin-bottom: -110px !important;
-  }
+//   .containervideo {
+//         position: relative;
+//         z-index: -1 !important;
+//         bottom: 68px;
+//         // margin-bottom: -110px !important;
+//   }

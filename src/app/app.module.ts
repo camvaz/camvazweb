@@ -2,6 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//MAPS
+import { AgmCoreModule } from '@agm/core';
+
 // MODULOS TOASTR
 import {CommonModule} from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
@@ -33,6 +36,9 @@ import { AboutComponent } from './about/about.component';
     AboutComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBsMJy4sS3dFOhp0R7WkjXmDnbbESROKAU'
+    }),
     CommonModule,
     BrowserModule,
     AppRoutingModule,
