@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  validatingForm: any;
+  validatingForm: FormGroup;
 
   constructor(private router:Router,
               private toastr:ToastrService,
@@ -35,22 +35,30 @@ export class NavbarComponent implements OnInit {
   }
 
   sendContactInfo(){
-    let data = {
-      nombre: $("#nombre").val(),
-      email: $("#email").val(),
-      descripcion: $("#descripcion").val()
+    console.log(this.validatingForm.valid);
+    if(!this.validatingForm.valid){
+      this.toastr.warning('Email invalido.','Error.');
+      return;
+    } else {
+      let data = {
+        nombre: $("#nombre").val(),
+        email: $("#email").val(),
+        descripcion: $("#descripcion").val()
+      }
+  
+      $("#sendbtn").attr('disabled',true);
+  
+      this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/contacto',
+                      {object:data},
+                      {responseType:'text'})
+               .subscribe(res => {
+                this.toastr.success('Espere un mensaje en su bandeja de entrada pronto.',
+                                     'Informacion enviada, gracias.')
+  
+                $("#sendbtn").attr('disabled',false);
+               })
+
     }
 
-    $("#sendbtn").attr('disabled',true);
-
-    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/contacto',
-                    {object:data},
-                    {responseType:'text'})
-             .subscribe(res => {
-              this.toastr.success('Espere un mensaje en su bandeja de entrada pronto.',
-                                   'Informacion enviada, gracias.')
-
-              $("#sendbtn").attr('disabled',false);
-             })
   }
 }

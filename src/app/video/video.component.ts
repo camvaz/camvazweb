@@ -33,11 +33,11 @@ export class VideoComponent implements OnInit {
       "logos:c",
       "logos:qt",
       "logos:java",
-                 "logos:python",
-                 "logos:php",
-                 "logos:linux-tux",
-                 "logos:figma"
-                ];
+      "logos:python",
+      "logos:php",
+      "logos:linux-tux",
+      "logos:figma"
+      ];
         
     this.router.navigate(['/index']);
 
