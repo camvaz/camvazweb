@@ -1,0 +1,43 @@
+
+
+@media only screen and (max-width: 768px) {
+    .imgcard2{
+    bottom:26% !important;
+    }
+}
+
+
+.containercards{
+    padding:4%;
+}
+
+.cardcolumn{
+    padding-bottom:10%;
+    padding-left:3%;
+   padding-right:3%;
+}
+
+.rowspacer{
+    padding:2%;
+}
+
+.rowcards{
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.imgcard2{
+    bottom:15%;
+}
+
+.imgcard{
+    width:94%;
+    position: absolute;
+    z-index:-1;
+}
+
+// .cardcolumn{
+//     padding-left:10%;
+//     padding-right:10%;
+//     border-radius: 30px;
+// }

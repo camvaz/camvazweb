@@ -2,6 +2,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+//HTTP Client
+import { HttpClientModule } from '@angular/common/http';
+
+
 //MAPS
 import { AgmCoreModule } from '@agm/core';
 
@@ -23,6 +28,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './video/video.component';
 import { AboutComponent } from './about/about.component';
+import { IndexComponent } from './index/index.component';
 
 
 @NgModule({
@@ -31,9 +37,11 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     FooterComponent,
     VideoComponent,
-    AboutComponent
+    AboutComponent,
+    IndexComponent
   ],
   imports: [
+    HttpClientModule,
     AgmCoreModule.forRoot({
 
       apiKey:'AIzaSyBsMJy4sS3dFOhp0R7WkjXmDnbbESROKAU'

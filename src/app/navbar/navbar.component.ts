@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,7 +13,8 @@ export class NavbarComponent implements OnInit {
   validatingForm: any;
 
   constructor(private router:Router,
-              private toastr:ToastrService) { }
+              private toastr:ToastrService,
+              private http:HttpClient) { }
 
   contacto(){
     $("#contacto").show();
@@ -30,5 +32,25 @@ export class NavbarComponent implements OnInit {
   
   get inputemail() {
     return this.validatingForm.get('email')
+  }
+
+  sendContactInfo(){
+    let data = {
+      nombre: $("#nombre").val(),
+      email: $("#email").val(),
+      descripcion: $("#descripcion").val()
+    }
+
+    $("#sendbtn").attr('disabled',true);
+
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/contacto',
+                    {object:data},
+                    {responseType:'text'})
+             .subscribe(res => {
+              this.toastr.success('Espere un mensaje en su bandeja de entrada pronto.',
+                                   'Informacion enviada, gracias.')
+
+              $("#sendbtn").attr('disabled',false);
+             })
   }
 }

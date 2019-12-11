@@ -1,8 +1,6 @@
 <div class="row p-0">
-    <div class="col-md p-0" 
-                >
+    <div class="col-md p-0">
         <div class="view w-100">
-            <!-- <img src="../../assets/video/video.mp4" class="img-fluid" alt=""> -->
             <ng-template [ngIf]="mobile == true">
                 <img src="../../assets/img/splash.jpg" class="img-fluid" alt="">
                 <img src="../../assets/img/splash.jpg" class="img-fluid" alt="">
@@ -14,134 +12,11 @@
                 </video>
             </ng-template>
             <div class="mask pattern6 flex-center w-responsive">
-                <div class="container-fluid h-100 p-0"
-                        style="
-                            background: rgba(0, 0, 0, 0.3);
-                        ">
-                    <div class="row" style="padding: 0px; margin:0;">
-                        <div class="col-md colnombre animated fadeIn faster"
-                        >
-                            <h1 class="uk-text-bold text-white text-center nombre"> Victor Campos </h1>
-
-                            <h1 class="uk-text-bold text-white text-center descripcion"> Full Stack Web Developer </h1>
-                            <button type="button"
-                                class=" botonland btn-primary"
-                                mdbWavesEffect> 
-                                <mdb-icon fas icon="file-code" class="pr-1"></mdb-icon>Ver portafolio </button>
-                        </div>
-                            
-                        <div class="col-md-2 colcards animated slideInRight faster" 
-                             >
-                            <div class="row pt-4">
-                                <div class="col-md"
-                             >
-                                    <mdb-card
-                                    >
-                                      <!-- <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
-                                          <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-                                      </agm-map>  -->
-                                      <mdb-card-body class="text-black carta">
-                                        <mdb-card-title>
-                                          <h4>Skills</h4>
-                                          <div class="row">
-                                              <!-- <div class="col-md">
-                                                <span class="iconify" data-icon="logos:angular-icon" data-inline="false"></span>
-                                              </div> -->
-                                              <div class="iconos"
-                                                    *ngFor="let icon of icons">
-                                                    <span class="iconify" 
-                                                        style="width:36px;
-                                                               height: 36px;"    
-                                                        [attr.data-icon]="icon" data-inline="false"></span>
-                                              </div>
-                                              <!-- <div class="col-md">
-                                                  <img src="../../assets/img/icons8-firebase.svg"
-                                                       class="img-fluid pr-1">  
-                                              </div>
-                                              <div class="col-md">
-                                                  <img src="../../assets/img/icons8-angularjs.svg"
-                                                       class="img-fluid px-1">  
-                                              </div>
-                                              <div class="col-md">
-                                                  <img src="../../assets/img/icons8-java-48.png"
-                                                       class="img-fluid px-1">  
-                                              </div>
-                                              <div class="col-md">
-                                                  <img src="../../assets/img/icons8-java-48.png"
-                                                       class="img-fluid px-1">  
-                                              </div> -->
-                                          </div>
-
-                                        </mdb-card-title>
-                                      </mdb-card-body>
-                                    </mdb-card>
-                                </div>
-
-                            </div>
-                            <div class="row py-4">
-                                        <div class="col-md">
-                                            <mdb-card>
-                                                <div class="divmap">
-                                                    <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 250px">
-                                                        <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-                                                    </agm-map> 
-                                                </div>
-                                              <mdb-card-body class="text-white carta">
-                                                <mdb-card-title>
-                                                  <h4 class="text-dark">College</h4>
-                                                  <small class="text-dark">Benemerita Universidad Autonoma de Puebla</small>
-                                                </mdb-card-title>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                        </div>
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="container-fluid h-100 p-0" style="background: rgba(0, 0, 0, 0.3);">
+                    <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
-<!-- The video
-<div class="container-fluid containervideo appdim " 
-style="
-        z-index: 0;
-        position: absolute !important; ">
-    <div class="row">
-        <div class="col-md p-0" style="height:1207px">
-            <video autoplay muted loop id="myVideo">
-                <source src="../../assets/video/video.mp4" type="video/mp4">
-            </video>
-
-
-            <div class="containter-fluid content">
-                <div class="row">
-                    <div class="col-md-5 content2 animated slideInLeft">
-                        <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
-                        <p class="parrafovid text-center text-white ">Full Stack Web Developer</p>
-                        <div class="text-center">
-                            <button mdbbtn mdbwaveseffect type="button" id="btnlogin"  class="btn btn-light ">
-                                <strong class="p-1">Portafolio</strong> <mdb-icon fas icon="file-code" class="p-1"></mdb-icon>
-                            </button>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="col-md content2 mx-2">
-                        <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
-                        <p class="parrafovid text-center text-white ">Full Stack Developer</p>
-                    </div> -->
-                <!-- </div> -->
-            <!-- </div> -->
-            <!-- <div class="content">
-                <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
-                <p class="parrafovid text-center text-white ">Full Stack Developer</p>
-            </div>
-            <div class="content2">
-                <h1 class="titulovid text-white text-md-center"><b>Victor Campos</b></h1>
-                <p class="parrafovid text-center text-white ">Full Stack Developer</p>
-            </div> -->
-        <!-- </div> -->
-    <!-- </div>
-</div> -->

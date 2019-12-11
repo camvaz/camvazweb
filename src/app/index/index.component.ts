@@ -1,24 +1,27 @@
-import { Component, OnInit, HostListener, Input } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import * as $ from 'jquery';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-video',
-  templateUrl: './video.component.html',
-  styleUrls: ['./video.component.scss']
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.scss']
 })
-export class VideoComponent implements OnInit {
-  mobile: boolean;
+export class IndexComponent implements OnInit {
+
   public map: any = { lat:19.0420883, lng: -98.1973028 };
   icons: string[];
-  // vid: HTMLVideoElement;
+  mobile: boolean;
 
-  constructor(private router:Router) { 
+  constructor() { }
+  ngOnInit() {
 
     this.mobile = window.innerWidth <= 1419 ? true : false;
-  }
 
-  ngOnInit() {
+    if(this.mobile == true ){
+      $(".colcards").addClass('col-md-3');
+    } else {
+      $(".colcards").addClass('col-md-2');
+    }
 
     this.icons =[
       "logos:angular-icon",
@@ -38,19 +41,17 @@ export class VideoComponent implements OnInit {
                  "logos:linux-tux",
                  "logos:figma"
                 ];
-        
-    this.router.navigate(['/index']);
-
-    this.mobile = window.innerWidth <= 1419 ? true : false;
-    
-    // $("#myVideo").play();
   }
-
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.mobile = window.innerWidth <= 1419 ? true : false;
-    $(".col")
+    if(this.mobile == true ){
+      $(".colcards").removeClass('col-md-2');
+      $(".colcards").addClass('col-md-3');
+    } else {
+      $(".colcards").removeClass('col-md-3');
+      $(".colcards").addClass('col-md-2');
+    }
   }
-
 }

@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, NgControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent {
   yaxis: number;
   botonUp: boolean;
 
-  constructor(private router: Router){
+  constructor(private router: Router,
+              private http: HttpClient){
 
   }
   

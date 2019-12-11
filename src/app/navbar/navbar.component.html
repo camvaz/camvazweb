@@ -2,7 +2,7 @@
     <div class="col-md navcontainer animated fadeIn p-0">
         <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black"
         [containerInside]="false">
-            <mdb-navbar-brand><a class="navbar-brand" href="#">
+            <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/index']" routerLinkActive="router-link-active"  href="#">
                 <b>
                     <mdb-icon fas icon="code" class="px-1"></mdb-icon>Portafolio
                 </b>
@@ -10,13 +10,21 @@
             <links>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item text-right px-2">
-                        <a class="nav-link waves-light" mdbWavesEffect>Inicio<span class="sr-only">(current)</span></a>
+                        <a [routerLink]="['/index']" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item text-right px-2">
-                        <a class="nav-link waves-light" mdbWavesEffect>Sobre Mi</a>
+                        <a [routerLink]="['/about']" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>Portafolio</a>
                     </li>
                     <li class="nav-item text-right px-2">
-                        <a class="nav-link waves-light" mdbWavesEffect>Portafolio</a>
+                        <div class="custom-control custom-switch"
+                        >
+                            <input 
+                            mdbPopover=""
+                            placement="right"
+                            mdbPopoverHeader="Support soon!"
+                            type="checkbox" class="custom-control-input" id="customSwitches">
+                            <label class="custom-control-label text-white" for="customSwitches"><mdb-icon fas icon="language" class="pr-1"></mdb-icon> es/en</label>
+                        </div>
                     </li>
                 </ul>
 
@@ -59,19 +67,18 @@
             <div class="modal-body">
                 <p>
                     Inserte sus datos para ponerme en contacto lo mas pronto posible.
-                    Quedo a sus ordenes a traves de mis redes sociales que se encuentran en el pie de pagina.
                 </p>
           <form [formGroup]="validatingForm">
             <div class="form-row">
               <div class="col">
                 <div class="md-form">
-                  <input mdbInput mdbValidate type="email" id="form1" class="form-control">
+                  <input mdbInput mdbValidate type="email" id="nombre" class="form-control">
                   <label for="form1">Nombre</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form">
-                  <input mdbInput mdbValidate type="email" id="form1" class="form-control" formControlName="email">
+                  <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="email">
                   <label for="form1">Correo Electronico</label>
                   <mdb-error *ngIf="inputemail.invalid && (inputemail.dirty || inputemail.touched)">
                     E-mail invalido</mdb-error>
@@ -83,7 +90,7 @@
             <div class="form-row">
                 <div class="col">
                         <div class="md-form">
-                                <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+                                <textarea type="text" id="descripcion" class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
                                 <label for="form7">Descripcion</label>
                             </div>
                 </div>
@@ -92,7 +99,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" mdbBtn color="light" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Cerrar</button>
-              <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Enviar</button>
+              <button (click)="validatingForm.valid && sendContactInfo()" id='sendbtn' type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Enviar</button>
             </div>
           </div>
         </div>
