@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -11,6 +11,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarComponent implements OnInit {
   validatingForm: FormGroup;
+  @Input() childMessage:string;
+  data: any;
+  datacontacto: any;
 
   constructor(private router:Router,
               private toastr:ToastrService,
@@ -26,7 +29,17 @@ export class NavbarComponent implements OnInit {
     this.validatingForm = new FormGroup({
       email: new FormControl(null, [Validators.required,Validators.email])
     })
-    // $("#myVideo").play();
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+                    {object:{lang:this.childMessage,component:'navbar'}})
+                      .subscribe(res => {
+                        this.data = res;
+                      })
+
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+                    {object:{lang:this.childMessage,component:'contacto'}})
+                      .subscribe(res => {
+                        this.datacontacto = res;
+                      })
   
   }
   
@@ -60,5 +73,21 @@ export class NavbarComponent implements OnInit {
 
     }
 
+  }
+
+  langswitch(){
+    this.childMessage = this.childMessage === 'es' ? 'en' : 'es';
+  
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+                    {object:{lang:this.childMessage,component:'navbar'}})
+                      .subscribe(res => {
+                        this.data = res;
+                      })
+
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+                    {object:{lang:this.childMessage,component:'contacto'}})
+                      .subscribe(res => {
+                        this.datacontacto = res;
+                      })
   }
 }

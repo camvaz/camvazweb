@@ -11,6 +11,8 @@ export class VideoComponent implements OnInit {
   mobile: boolean;
   public map: any = { lat:19.0420883, lng: -98.1973028 };
   icons: string[];
+
+  @Input() childMessage:string;
   // vid: HTMLVideoElement;
 
   constructor(private router:Router) { 
@@ -39,7 +41,7 @@ export class VideoComponent implements OnInit {
       "logos:figma"
       ];
         
-    this.router.navigate(['/index']);
+    this.router.navigate(['/index',{lang:this.childMessage}]);
 
     this.mobile = window.innerWidth <= 1419 ? true : false;
     

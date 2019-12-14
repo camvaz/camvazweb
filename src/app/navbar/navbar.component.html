@@ -2,27 +2,27 @@
     <div class="col-md navcontainer animated fadeIn p-0">
         <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black"
         [containerInside]="false">
-            <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/index']" routerLinkActive="router-link-active"  href="#">
+            <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/index',{lang:childMessage}]" routerLinkActive="router-link-active"  href="#">
                 <b>
-                    <mdb-icon fas icon="code" class="px-1"></mdb-icon>Portafolio
+                    <mdb-icon fas icon="code" class="px-1"></mdb-icon>
+                    {{data.brand}}
                 </b>
                 </a></mdb-navbar-brand>
             <links>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item text-right px-2">
-                        <a [routerLink]="['/index']" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>Inicio<span class="sr-only">(current)</span></a>
+                        <a [routerLink]="['/index',{lang:childMessage}]" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>
+                            {{data.home}}<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item text-right px-2">
-                        <a [routerLink]="['/about']" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>Portafolio</a>
+                        <a [routerLink]="['/about',{lang:childMessage}]" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>
+                            {{data.portfolio}}</a>
                     </li>
                     <li class="nav-item text-right px-2">
                         <div class="custom-control custom-switch"
                         >
                             <input 
-                            mdbPopover=""
-                            placement="right"
-                            mdbPopoverHeader="Support soon!"
-                            type="checkbox" class="custom-control-input" id="customSwitches">
+                            type="checkbox" class="custom-control-input" (click)="langswitch()" id="customSwitches">
                             <label class="custom-control-label text-white" for="customSwitches"><mdb-icon fas icon="language" class="pr-1"></mdb-icon> es/en</label>
                         </div>
                     </li>
@@ -31,7 +31,7 @@
                 <ul class="navbar-nav ml-auto mr-1 nav-flex-icons">
                     <li class="nav-item ">
                         <a class="nav-link waves-light" (click)="basicModal.show()" mdbWavesEffect>
-                            <mdb-icon fas icon="envelope"></mdb-icon> Contacto<span class="sr-only">(current)</span>
+                            <mdb-icon fas icon="envelope"></mdb-icon>{{data.contact}}<span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -66,20 +66,20 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Inserte sus datos para ponerme en contacto lo mas pronto posible.
+                    {{datacontacto.description}}
                 </p>
           <form [formGroup]="validatingForm">
             <div class="form-row">
               <div class="col">
                 <div class="md-form">
                   <input mdbInput mdbValidate type="email" id="nombre" class="form-control">
-                  <label for="form1">Nombre</label>
+                  <label for="form1">{{datacontacto['place-1']}}</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form">
                   <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="email">
-                  <label for="form1">Correo Electronico</label>
+                  <label for="form1">{{datacontacto['place-2']}}</label>
                   <mdb-error *ngIf="inputemail.invalid && (inputemail.dirty || inputemail.touched)">
                     E-mail invalido</mdb-error>
                   <mdb-success *ngIf="inputemail.valid && (inputemail.dirty || inputemail.touched)">E-mail
@@ -91,7 +91,7 @@
                 <div class="col">
                         <div class="md-form">
                                 <textarea type="text" id="descripcion" class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
-                                <label for="form7">Descripcion</label>
+                                <label for="form7">{{datacontacto['place-3']}}</label>
                             </div>
                 </div>
             </div>

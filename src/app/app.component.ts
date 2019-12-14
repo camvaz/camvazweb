@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'camvaz';
   contact: boolean = false;
+  lang: string;
   validatingForm:FormGroup;
   innerWidth: number;
   yaxis: number;
@@ -27,6 +28,15 @@ export class AppComponent {
     this.validatingForm = new FormGroup({
       email: new FormControl(null, [Validators.required,Validators.email])
     })
+
+    this.lang = 'es';
+
+    // this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+    //                 {object:{lang:'es',component:'index'}})
+    //           .subscribe(res => {
+    //             console.log(res);
+    //           })
+
     // $("#myVideo").play();
   }
   

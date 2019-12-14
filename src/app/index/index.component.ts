@@ -1,5 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import * as $ from 'jquery';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -11,9 +13,23 @@ export class IndexComponent implements OnInit {
   public map: any = { lat:19.0420883, lng: -98.1973028 };
   icons: string[];
   mobile: boolean;
+  oldMessage:string;
+  @Input() childMessage:string;
+  data:any;
 
-  constructor() { }
+  constructor(private http:HttpClient,
+              private route:ActivatedRoute) { }
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.oldMessage = this.childMessage;  
+      this.childMessage = params['lang'];
+    })
+    
+    if(this.data === undefined || this.childMessage !== this.oldMessage){
+      console.log(this.data===undefined);
+      console.log(this.childMessage === this.oldMessage);
+      this.langdata();
+    }
 
     this.mobile = window.innerWidth <= 1419 ? true : false;
 
@@ -36,11 +52,11 @@ export class IndexComponent implements OnInit {
       "logos:c",
       "logos:qt",
       "logos:java",
-                 "logos:python",
-                 "logos:php",
-                 "logos:linux-tux",
-                 "logos:figma"
-                ];
+      "logos:python",
+      "logos:php",
+      "logos:linux-tux",
+      "logos:figma"
+    ];
   }
 
   @HostListener('window:resize', ['$event'])
@@ -53,5 +69,13 @@ export class IndexComponent implements OnInit {
       $(".colcards").removeClass('col-md-3');
       $(".colcards").addClass('col-md-2');
     }
+  }
+
+  langdata(){
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+                  {object:{lang:this.childMessage,component:'index'}})
+                    .subscribe(res => {
+                      this.data = res;
+                    })
   }
 }

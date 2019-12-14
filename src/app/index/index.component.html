@@ -1,53 +1,54 @@
-                    <div class="row" style="padding: 0px; margin:0;">
-                        <div class="col-md colnombre animated fadeIn ">
-                            <h1 class="uk-text-bold text-white text-center nombre"> Victor Campos </h1>
+<div class="row" style="padding: 0px; margin:0;">
+    <div class="col-md colnombre animated fadeIn ">
+        <h1 class="uk-text-bold text-white text-center nombre"> Victor Campos </h1>
+        
+        <h1 class="uk-text-bold text-white text-center descripcion"> {{data.occupation}} </h1>
+        <button type="button" class=" botonland btn-primary" [routerLink]="['/about',{lang:childMessage}]"
+            routerLinkActive="router-link-active" mdbWavesEffect>
+            <p class='portafoliobtn'>
+                <mdb-icon fas icon="file-code" class="pr-1"></mdb-icon>{{data.button}}
+            </p>
+        </button>
+    </div>
 
-                            <h1 class="uk-text-bold text-white text-center descripcion"> Full Stack Web Developer </h1>
-                            <button type="button" class=" botonland btn-primary" [routerLink]="['/about']" routerLinkActive="router-link-active"  mdbWavesEffect>
-                                <p class='portafoliobtn'>
-                                    <mdb-icon fas icon="file-code" class="pr-1"></mdb-icon>Ver portafolio
-                                </p>
-                            </button>
-                        </div>
-
-                        <div class="colcards animated slideInRight ">
-                            <div class="row pt-4">
-                                <div class="col-md">
-                                    <mdb-card>
-                                       <mdb-card-body class="text-black carta">
-                                            <mdb-card-title>
-                                                <h4>Skills</h4>
-                                                <div class="row">
-                                                   <div class="iconos" *ngFor="let icon of icons">
-                                                        <span class="iconify" style="width:36px;
+    <div class="colcards animated slideInRight ">
+        <div class="row pt-4">
+            <div class="col-md">
+                <mdb-card>
+                    <mdb-card-body class="text-black carta">
+                        <mdb-card-title>
+                            <h4>{{data.card1}}</h4>
+                            <div class="row">
+                                <div class="iconos" *ngFor="let icon of icons">
+                                    <span class="iconify" style="width:36px;
                                                                height: 36px;" [attr.data-icon]="icon"
-                                                            data-inline="false"></span>
-                                                    </div>
-                                               </div>
-                                            </mdb-card-title>
-                                        </mdb-card-body>
-                                    </mdb-card>
+                                        data-inline="false"></span>
                                 </div>
                             </div>
-                            <div class="row py-4">
-                                <div class="col-md">
-                                    <mdb-card>
-                                        <div class="divmap">
-                                            <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 250px">
-                                                <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-                                            </agm-map>
-                                        </div>
-                                        <mdb-card-body class="text-white carta">
-                                            <mdb-card-title>
-                                                <h6 class="text-dark">Located In</h6>
-                                                <small class="text-dark">
-                                                    Puebla, Mexico.
-                                                </small>
-                                            </mdb-card-title>
-                                        </mdb-card-body>
-                                    </mdb-card>
-                                </div>
-
-                            </div>
-                        </div>
+                        </mdb-card-title>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+        </div>
+        <div class="row py-4">
+            <div class="col-md">
+                <mdb-card>
+                    <div class="divmap">
+                        <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 250px">
+                            <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
+                        </agm-map>
                     </div>
+                    <mdb-card-body class="text-white carta">
+                        <mdb-card-title>
+                            <h6 class="text-dark">{{data.card2}}</h6>
+                            <small class="text-dark">
+                                Puebla, Mexico.
+                            </small>
+                        </mdb-card-title>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+        </div>
+    </div>
+</div>

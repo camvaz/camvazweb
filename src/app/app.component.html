@@ -1,7 +1,7 @@
 <div class="container-fluid p-0 black">
-    <app-navbar></app-navbar>
-    <app-video></app-video>
-    <app-footer></app-footer>
+    <app-navbar [childMessage]="lang"></app-navbar>
+    <app-video [childMessage]="lang"></app-video>
+    <app-footer [childMessage]="lang"></app-footer>
 </div>
     <!-- <ng-template [ngIf]="contact == true">
         <div class="contacto">

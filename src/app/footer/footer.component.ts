@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  @Input() childMessage:string;
+  data: any;
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    this.http.post('https://us-central1-camvazweb.cloudfunctions.net/widgets/lang',
+                    {object:{lang:this.childMessage,component:'footer'}})
+                      .subscribe(res => {
+                        this.data = res; 
+                      })
   }
 
 }
