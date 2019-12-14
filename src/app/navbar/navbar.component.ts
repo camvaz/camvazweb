@@ -50,7 +50,7 @@ export class NavbarComponent implements OnInit {
   sendContactInfo(){
     console.log(this.validatingForm.valid);
     if(!this.validatingForm.valid){
-      this.toastr.warning('Email invalido.','Error.');
+      this.toastr.warning(this.datacontacto['toast-fail'][0],'Error.');
       return;
     } else {
       let data = {
@@ -65,8 +65,8 @@ export class NavbarComponent implements OnInit {
                       {object:data},
                       {responseType:'text'})
                .subscribe(res => {
-                this.toastr.success('Espere un mensaje en su bandeja de entrada pronto.',
-                                     'Informacion enviada, gracias.')
+                this.toastr.success(this.datacontacto['toast-succ'][0],
+                                     this.datacontacto['toast-succ'][1])
   
                 $("#sendbtn").attr('disabled',false);
                })
